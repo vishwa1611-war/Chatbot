@@ -1,0 +1,4 @@
+flask[async]
+aiohttp
+flask-cors
+python-dotenv

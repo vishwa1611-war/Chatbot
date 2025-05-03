@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBot Chat Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="background-container">
+        <img src="https://cdn.dribbble.com/users/717092/screenshots/5267316/bot.gif" alt="Bot Animation" id="background-animation">
+    </div>
+    
+    <div id="chat-container">
+        <div id="chat-header">
+            <div id="header-content">
+                <img src="https://wiki.starbasegame.com/images/c/c3/KBot_Logo.png" alt="KBot Logo" id="bot-icon">
+                <span id="app-title">KBot Assistant</span>
+            </div>
+            <button id="settings-button">
+                <i class="fas fa-cog"></i>
+            </button>
+        </div>
+        <div id="chat-messages"></div>
+        <div id="message-input-container">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button id="send-button">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Settings</h2>
+            <div class="settings-grid">
+                <div class="setting-option">
+                    <label for="theme-select">Theme:</label>
+                    <select id="theme-select">
+                        <option value="light">Light Mode</option>
+                        <option value="dark">Dark Mode</option>
+                        <option value="high-contrast">High Contrast</option>
+                    </select>
+                </div>
+                <div class="setting-option">
+                    <label for="font-size">Font Size:</label>
+                    <select id="font-size">
+                        <option value="small">Small</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+                <div class="setting-option">
+                    <label for="message-sound">Message Sound:</label>
+                    <select id="message-sound">
+                        <option value="on">On</option>
+                        <option value="off">Off</option>
+                    </select>
+                </div>
+                <div class="setting-option">
+                    <label for="language">Language:</label>
+                    <select id="language">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                    </select>
+                </div>
+            </div>
+            <div class="setting-option">
+                <label>Chat Background:</label>
+                <div class="background-options">
+                    <button class="bg-option active" data-bg="default"></button>
+                    <button class="bg-option" data-bg="gradient1"></button>
+                    <button class="bg-option" data-bg="gradient2"></button>
+                </div>
+            </div>
+            <button id="save-settings">Save Changes</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
